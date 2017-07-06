@@ -243,8 +243,11 @@ document.addEventListener("drop", function(event) {
             var nodeCopy = document.getElementById(dropped_element_id);
             nodeCopy.id = "newId"; /* We cannot use the same ID */
             event.target.appendChild(nodeCopy);
-
-            // document.getElementById("budget").value = budget_new.toString();
+            nodeCopy.parentNode.removeChild(nodeCopy);
+            // event.target.appendChild(document.getElementById(data));
+            // var data=event.dataTransfer.getData("text/html");
+            // data.id = "newId"; /* We cannot use the same ID */
+            // event.target.appendChild(data);
         }
     }
 });
@@ -350,30 +353,30 @@ function update_parameters(){
 }
 
 function check_parameters(){
-    if(carbon >= 0.1){
-        document.getElementById("danger_message").style.display = "True";
+    var carbon_temp = parseFloat(carbon, 10);
+    var employment_temp = parseFloat(employment, 10);
+
+    if(carbon_temp >= 0.2){
+        // document.getElementById("danger_message").style.display = "True";
         document.getElementById("danger_message").innerHTML = "Carbon emission too high!";
+        $('#danger_message').show();
     }
-    if(carbon < 0.1){
+    if(carbon_temp < 0.2){
         // document.getElementById("danger_message").style.display = "none";
+        $('#danger_message').hide();
+    }
+
+    if(employment_temp >= 6){
+        // document.getElementById("danger_message").style.display = "True";
+        document.getElementById("tip_message").innerHTML = "Population is increasing. Consider building new homes.";
+        $('#tip_message').show();
+    }
+    if(employment_temp < 6){
+        // document.getElementById("danger_message").style.display = "none";
+        $('#tip_message').hide();
     }
 }
-//
-// function dragStart(event) {
-//     event.dataTransfer.setData("Text", event.target.id);
-//     document.getElementById("demo").innerHTML = "Started to drag the p element";
-// }
-//
-// function allowDrop(event) {
-//     event.preventDefault();
-// }
-//
-// function drop(event) {
-//     event.preventDefault();
-//     var data = event.dataTransfer.getData("Text");
-//     event.target.appendChild(document.getElementById(data));
-//     document.getElementById("demo").innerHTML = "The p element was dropped";
-// }
+
 </script>
 
 {% endblock %}
