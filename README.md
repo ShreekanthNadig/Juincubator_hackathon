@@ -4,4 +4,7 @@ Command to run the project:<br />
 python manage.py runserver 8080<br />
 
 <h1> Login Page </h1>
-![Alt text](./screenshot/1.png?raw=true "Title")
+<p align="center">
+  <img src="./screenshots/1.png" width="350"/>
+  <img src="./screenshots/2.png" width="350"/>
+</p>
