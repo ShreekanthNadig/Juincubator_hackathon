@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+p {
+    width: 900px;
+    margin-left: 20px;
+}
+
+</style>
+<h1>About:</h1>
+<div id="about_column">
+    
+<p>
+    In the 18th Century, there was rapid development in science and technology, which led to the gradual division of built in environment into two areas- Urban built in environment and evolved Industrial built in environment, sometimes coexisting in the same area, and merging into one another.
+</p><br />
+
+<p>
+    Cities are the basis of our society and consume large amounts of resources which are distributed through networks such as housing, transportation. These networks are interconnected and influence others. At a macro level, a city can be thought of as system of systems. The concept of Smart/Ideal city is based on how these systems incorporate each other with Urban Planning being one of the most important pillar in laying road for an ideal city.
+</p><br />
+
+<p>
+    Our game, iCarto is a serious game which enables the user to step up into the shoes of a policy maker for Urban Planning. The gaming session involves the inputs from a single/multi player in terms of related indicators such/ as Industry setup, Employment, Housing and Environment arrangement, where the player plays the role of government/ policy maker, who will be responsible to map a city by considering the mentioned indicators. The game position the player in a hypothetical situation setting that simulates the real-life problem-solving situation. This helps them understand/appreciate how the political adversaries view the problem.
+</p><br />
+</div>
+
+<h1>Instructions:</h1>
+<div class="list-group">
+  <a href="#" class="list-group-item">The player will have indicators (industry, housing, green cover, transportation) with each will be placed as widgets.</a>
+  <a href="#" class="list-group-item">Specific budget will be allocated to the player. Each of the indicator has a specific cost which is mentioned with the figure at the right side of the game. Player has to map these indicators with the allocated budget and there exists correlation between various indicators.</a>
+  <a href="#" class="list-group-item">The game duration is 5 minutes with every minute treated as a year. So, the player has gone to the journey of Five-year Plan in 5 minutes</a>
+  <a href="#" class="list-group-item">The Changes will be reflected in terms of budget, indicators and parameters based upon the way player has mapped the city after every year (Here 1 year= 1 Minute).</a>
+  <a href="#" class="list-group-item">Pop-ups will appear to help the player as guide to progress throughout various stages of the game.</a>
+</div>
+
+<center>
+    <div id="top_instruction">
+    <button type="button" onclick='location.href="/home"' class="btn btn-success">Proceed to Game</button>
+    </div>
+</center>
+
+{% endblock %}
