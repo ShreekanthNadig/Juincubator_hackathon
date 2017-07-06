@@ -20,5 +20,5 @@ python manage.py runserver 8080<br />
 
 <h1> During Gameplay </h1>
 <p align="center">
-<img src="./screenshots/4.png" width="800"/>
+<img src="./screenshots/5.png" width="800"/>
 </p>
