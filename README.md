@@ -4,4 +4,4 @@ Command to run the project:<br />
 python manage.py runserver 8080<br />
 
 <h1> Login Page </h1>
-![Alt text](/screenshots/1.png?raw=true "Optional Title")
+![Alt text](./screenshots/1.png?raw=true "Optional Title")
