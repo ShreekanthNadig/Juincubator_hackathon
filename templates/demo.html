@@ -11,6 +11,7 @@
     border: 1px solid #aaaaaa;
     overflow-y: scroll;
 }
+
 #droptarget_left{
     width: 200px;
 }
@@ -28,17 +29,24 @@
 #tips{
     column-count: 8
 }
+#div_with_bg{
+    position:relative;
+    background-image: url(../static/images/background_page.jpg);
+    /*opacity: 0.1;*/
+    /*background: rgba(204, 204, 204, 0.5);*/
+    height: 1000px;
+}
 </style>
 </head>
 
+<div id="div_with_bg" >
 <body>
-
 <center>
 <div id="top_instruction">
 <button type="button" onclick="start_timer()" class="btn btn-success">Start Game</button>
 </div>
 
-<div style="margin: 10px">Game finishes in <span id="time"></span> minutes!</div>
+<div style="margin: 10px; color:white">Game finishes in <span id="time"></span> minutes!</div>
 
 <div class="progress" style="width: 1500px">
   <div id="one" class="progress-bar progress-bar-success" style="width: 0%">
@@ -71,7 +79,7 @@
 
 <br />
 
-<img id="drag7" src="../static/images/Industry.png" draggable="true" width="70" height="50" name="industry">
+<img id="drag7" src="../static/images/download.png" draggable="true" width="70" height="50" name="industry">
 
 <br />
 
@@ -84,14 +92,14 @@
 <div style="background-color: lightgreen" class="droptarget" id="droptarget_right"></div>
 
 <div class="parameters">
-<form class="parameters" action="/action_page.php">
-  Budget: <input type="text" id="budget" name="country" value="100000" readonly><br>
+<form class="parameters" action="/action_page.php"  style="color:white">
+  Budget: <input type="text" id="budget" name="country" value="100000"  style="color:black" readonly><br>
 
-  Carbon Emission: <input type="text" id="carbon" name="country" value="0" readonly><br>
+  Carbon Emission: <input type="text" id="carbon" name="country" value="0"  style="color:black" readonly><br>
 
-  Population: <input type="text" id="population" name="country" value="10000" readonly><br>
+  Population: <input type="text" id="population" name="country" value="10000"  style="color:black" readonly><br>
 
-  Employement Rate: <input type="text" id="employment" name="country" value="0" readonly><br>
+  Employement Rate: <input type="text" id="employment" name="country" value="0"  style="color:black" readonly><br>
 </form> <br />
 <img src="../static/images/key.png" height="300px">
 </div>
@@ -105,15 +113,12 @@
 <center>
     <div id="tip_message" style="width:500px" class="alert alert-info" role="alert">Tip:</div>
 </center>
-</div>
 
-</div>
 <center>
     <div id="alert_message" style="width:500px" class="alert alert-success" role="alert">iCarto</div>
 </center>
+</body>
 </div>
-
-
 
 <script>
 var budget = document.getElementById("budget").value;
@@ -233,7 +238,7 @@ document.addEventListener("drop", function(event) {
 
             if(dropped_element_name == "tree"){
                 parameter_values[0]++;
-                var carbon_new = parseFloat(carbon, 10) - parseFloat(carbon, 10) * 0.05;
+                var carbon_new = parseFloat(carbon, 10) - 0.05;
                 document.getElementById("carbon").value = carbon_new;
                 carbon = parseFloat(carbon_new, 10);
             }
