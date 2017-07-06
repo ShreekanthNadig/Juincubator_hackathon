@@ -4,4 +4,4 @@ Command to run the project:<br />
 python manage.py runserver 8080<br />
 
 <h1> Login Page </h1>
-![ScreenShot](https://raw.github.com/{ShreekanthNadig}/{Juincubator_hackathon}/{master}/{screenshot/1.png})
+![Alt text](/screenshot/1.png?raw=true "Title")
